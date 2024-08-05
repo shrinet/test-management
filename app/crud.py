@@ -7,7 +7,7 @@ def get_user_by_username(db: Session, username: str):
 
 def create_user(db: Session, user: schemas.UserCreate):
     hashed_password = sha256(user.password.encode('utf-8')).hexdigest()
-    db_user = models.User(username=user.username, password=hashed_password, role=user.role)
+    db_user = models.User(username=user.username, email=user.email, full_name=user.full_name, password=hashed_password, role=user.role)
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
