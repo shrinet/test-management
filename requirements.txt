@@ -7,3 +7,6 @@ passlib[bcrypt]
 python-jose
 python-multipart
 python-dotenv
+pytest
+httpx
+pytest-asyncio
